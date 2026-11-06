@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toccata | Game Systems & Gameplay Programmer</title>
+  <meta name="description" content="Portfolio of Toccata - Game Systems Programmer specializing in Roblox (Luau) and Unity (C#), networking, mechanics, and interactive tech." />
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Ambient Glow Background Canvas/Effects -->
+  <div class="glow-bg"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-code">&lt;</span>Toccata<span class="logo-code">/&gt;</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#hero" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#systems" class="nav-link">Systems</a>
+        <a href="#featured" class="nav-link">Full Games</a>
+        <a href="#creative-lab" class="nav-link">UI / 3D / 2D</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero / Landing Section -->
+  <header class="hero" id="hero">
+    <div class="container hero-content">
+      <div class="badge-pill">
+        <span class="status-dot"></span> Available for Roblox & Unity Commissions
+      </div>
+      <h1 class="hero-title">
+        Game Systems & <span class="gradient-text">Gameplay Programmer</span>
+      </h1>
+      <p class="hero-subtitle">
+        Specializing in Roblox Luau & Unity C#. Crafting responsive mechanics, server-authoritative netcode, modular game architecture, and snappy game feel.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#systems" class="btn btn-primary">
+          <i class="fa-solid fa-microchip"></i> View Systems Catalogue
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fa-brands fa-discord"></i> Get in Touch
+        </a>
+      </div>
+
+      <!-- Quick Platform & Framework Highlights -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <span class="stat-num">Roblox Luau</span>
+          <span class="stat-label">Networking, Rojo, Knit, Profiles</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">Unity C#</span>
+          <span class="stat-label">FSM AI, URP, Physics, Architecture</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">Game Feel</span>
+          <span class="stat-label">Client Prediction, Tweens, Juice</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">Multi-Discipline</span>
+          <span class="stat-label">Systems, Vector UI & 3D Assets</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1: SYSTEMS (Catalogue of Systems with Video/GIF Previews -> Click Opens Widget) -->
+  <section class="section" id="systems">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Interactive Catalogue</span>
+        <h2 class="section-title">Game Systems Showcase</h2>
+        <p class="section-desc">
+          Modular game systems, mechanics, and backend architectures. Click any system card to view detailed specifications on how it was built.
+        </p>
+      </div>
+
+      <div class="systems-catalogue-grid">
+
+        <!-- System Item 1 -->
+        <article class="system-card" data-system-id="sys-combat">
+          <div class="system-media-box">
+            <!-- Replace placeholder with: <video src="assets/videos/combat.mp4" autoplay loop muted playsinline></video> -->
+            <div class="media-preview-container">
+              <i class="fa-solid fa-shield-halved media-icon"></i>
+              <span class="media-hint"><i class="fa-solid fa-play"></i> Looping Video / GIF Preview</span>
+            </div>
+            <span class="system-platform-tag roblox"><i class="fa-solid fa-cube"></i> Roblox</span>
+          </div>
+          <div class="system-card-content">
+            <h3 class="system-card-title">Server-Authoritative Melee & Hitbox System</h3>
+            <p class="system-card-desc">
+              Anti-exploit melee combat with client-side prediction, spatial bounding checks, and server raycast verification.
+            </p>
+            <div class="system-card-footer">
+              <span class="click-hint"><i class="fa-solid fa-circle-info"></i> Click to inspect system</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- System Item 2 -->
+        <article class="system-card" data-system-id="sys-inventory">
+          <div class="system-media-box">
+            <div class="media-preview-container">
+              <i class="fa-solid fa-boxes-stacked media-icon"></i>
+              <span class="media-hint"><i class="fa-solid fa-play"></i> Looping Video / GIF Preview</span>
+            </div>
+            <span class="system-platform-tag roblox"><i class="fa-solid fa-cube"></i> Roblox</span>
+          </div>
+          <div class="system-card-content">
+            <h3 class="system-card-title">Production Inventory & Data Sync Pipeline</h3>
+            <p class="system-card-desc">
+              ProfileService data backbone featuring atomic item transactions, session-locking guards, and ReplicaService client synchronization.
+            </p>
+            <div class="system-card-footer">
+              <span class="click-hint"><i class="fa-solid fa-circle-info"></i> Click to inspect system</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- System Item 3 -->
+        <article class="system-card" data-system-id="sys-ability">
+          <div class="system-media-box">
+            <div class="media-preview-container">
+              <i class="fa-brands fa-unity media-icon"></i>
+              <span class="media-hint"><i class="fa-solid fa-play"></i> Looping Video / GIF Preview</span>
+            </div>
+            <span class="system-platform-tag unity"><i class="fa-brands fa-unity"></i> Unity</span>
+          </div>
+          <div class="system-card-content">
+            <h3 class="system-card-title">ScriptableObject Ability & Buff Framework</h3>
+            <p class="system-card-desc">
+              Data-driven ability pipeline with cooldown buffering, polymorphic execution logic, and stackable status modifiers.
+            </p>
+            <div class="system-card-footer">
+              <span class="click-hint"><i class="fa-solid fa-circle-info"></i> Click to inspect system</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- System Item 4 -->
+        <article class="system-card" data-system-id="sys-pet">
+          <div class="system-media-box">
+            <div class="media-preview-container">
+              <i class="fa-solid fa-paw media-icon"></i>
+              <span class="media-hint"><i class="fa-solid fa-play"></i> Looping Video / GIF Preview</span>
+            </div>
+            <span class="system-platform-tag roblox"><i class="fa-solid fa-cube"></i> Roblox</span>
+          </div>
+          <div class="system-card-content">
+            <h3 class="system-card-title">Client-Replicated Pet Follower Physics</h3>
+            <p class="system-card-desc">
+              Spring-damper physics and bezier paths simulated strictly on client RenderStepped with zero server physics drag.
+            </p>
+            <div class="system-card-footer">
+              <span class="click-hint"><i class="fa-solid fa-circle-info"></i> Click to inspect system</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- System Item 5 -->
+        <article class="system-card" data-system-id="sys-dialogue">
+          <div class="system-media-box">
+            <div class="media-preview-container">
+              <i class="fa-solid fa-comments media-icon"></i>
+              <span class="media-hint"><i class="fa-solid fa-play"></i> Looping Video / GIF Preview</span>
+            </div>
+            <span class="system-platform-tag roblox"><i class="fa-solid fa-cube"></i> Roblox</span>
+          </div>
+          <div class="system-card-content">
+            <h3 class="system-card-title">Branching Node Dialogue & Quest Trigger System</h3>
+            <p class="system-card-desc">
+              Interactive typewriter UI with conditional branching, player reputation checks, and signal-driven quest events.
+            </p>
+            <div class="system-card-footer">
+              <span class="click-hint"><i class="fa-solid fa-circle-info"></i> Click to inspect system</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- System Item 6 -->
+        <article class="system-card" data-system-id="sys-ai">
+          <div class="system-media-box">
+            <div class="media-preview-container">
+              <i class="fa-solid fa-brain media-icon"></i>
+              <span class="media-hint"><i class="fa-solid fa-play"></i> Looping Video / GIF Preview</span>
+            </div>
+            <span class="system-platform-tag unity"><i class="fa-brands fa-unity"></i> Unity</span>
+          </div>
+          <div class="system-card-content">
+            <h3 class="system-card-title">Hierarchical AI Perception & State Machine</h3>
+            <p class="system-card-desc">
+              Modular finite-state AI enemy controller featuring sight cones, audio alert propagation, and dynamic pathfinding.
+            </p>
+            <div class="system-card-footer">
+              <span class="click-hint"><i class="fa-solid fa-circle-info"></i> Click to inspect system</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: FULL GAMES (3 Games side by side with details underneath) -->
+  <section class="section alt-bg" id="featured">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Shipped & Playable</span>
+        <h2 class="section-title">Full Games</h2>
+        <p class="section-desc">
+          Complete gameplay experiences showcasing game loop design, full-stack programming, and overall production polish.
+        </p>
+      </div>
+
+      <div class="full-games-grid">
+
+        <!-- Game 1 -->
+        <article class="game-column-card">
+          <div class="game-media">
+            <div class="media-preview-container">
+              <i class="fa-solid fa-dungeon media-icon"></i>
+              <span class="media-hint"><i class="fa-solid fa-video"></i> Video / Screenshot</span>
+            </div>
+            <span class="game-platform-badge roblox-badge"><i class="fa-solid fa-cube"></i> Roblox</span>
+          </div>
+          <div class="game-content">
+            <div class="game-meta">
+              <span class="game-role">Lead Programmer</span>
+              <span class="game-year">2024</span>
+            </div>
+            <h3 class="game-title">Rogue Blade: Dungeons</h3>
+            <p class="game-short-desc">
+              Multiplayer dungeon crawler featuring procedural room generation, server-authoritative combat, and networked loot instances.
+            </p>
+
+            <div class="game-details-box">
+              <div class="detail-row">
+                <span class="detail-label">Tech Stack:</span>
+                <span class="detail-val">Luau, Rojo, ProfileService, ReplicaService</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Key Systems:</span>
+                <span class="detail-val">Dungeon Gen, Fast Melee, Item Drops, Party Matchmaking</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Status:</span>
+                <span class="detail-val">Playable Experience</span>
+              </div>
+            </div>
+
+            <div class="game-actions">
+              <a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Play Place</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Game 2 -->
+        <article class="game-column-card">
+          <div class="game-media">
+            <div class="media-preview-container">
+              <i class="fa-solid fa-tree media-icon"></i>
+              <span class="media-hint"><i class="fa-solid fa-video"></i> Video / Screenshot</span>
+            </div>
+            <span class="game-platform-badge unity-badge"><i class="fa-brands fa-unity"></i> Unity C#</span>
+          </div>
+          <div class="game-content">
+            <div class="game-meta">
+              <span class="game-role">Solo Developer</span>
+              <span class="game-year">2024</span>
+            </div>
+            <h3 class="game-title">Echoes of Eden</h3>
+            <p class="game-short-desc">
+              Tactical survival adventure built around custom FSM enemy perception, grid-based construction, and dynamic day/night cycles.
+            </p>
+
+            <div class="game-details-box">
+              <div class="detail-row">
+                <span class="detail-label">Tech Stack:</span>
+                <span class="detail-val">C#, Unity 2022 LTS, URP, NavMesh</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Key Systems:</span>
+                <span class="detail-val">Grid Building, State-Machine AI, Save Serialization</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Status:</span>
+                <span class="detail-val">Public Demo Build</span>
+              </div>
+            </div>
+
+            <div class="game-actions">
+              <a href="#" class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> Repository / Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Game 3 -->
+        <article class="game-column-card">
+          <div class="game-media">
+            <div class="media-preview-container">
+              <i class="fa-solid fa-gauge-high media-icon"></i>
+              <span class="media-hint"><i class="fa-solid fa-video"></i> Video / Screenshot</span>
+            </div>
+            <span class="game-platform-badge roblox-badge"><i class="fa-solid fa-cube"></i> Roblox</span>
+          </div>
+          <div class="game-content">
+            <div class="game-meta">
+              <span class="game-role">Systems & Gameplay</span>
+              <span class="game-year">2023</span>
+            </div>
+            <h3 class="game-title">Velocity Parkour Rush</h3>
+            <p class="game-short-desc">
+              High-speed time-trial platformer with wall-running, vaulting, sliding, and an authoritative global leaderboard system.
+            </p>
+
+            <div class="game-details-box">
+              <div class="detail-row">
+                <span class="detail-label">Tech Stack:</span>
+                <span class="detail-val">Luau, Custom Raycast Movement, Knit</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Key Systems:</span>
+                <span class="detail-val">Custom Character Controller, Ghost Run Replay, Leaderboards</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Status:</span>
+                <span class="detail-val">Playable Experience</span>
+              </div>
+            </div>
+
+            <div class="game-actions">
+              <a href="#" class="btn btn-sm btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Play Place</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: RANDOM SECTION (UI, 3D, 2D & ART) -->
+  <section class="section" id="creative-lab">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Multi-Discipline Work</span>
+        <h2 class="section-title">Random UI, 3D & 2D Assets</h2>
+        <p class="section-desc">
+          Game interfaces, 3D models, shaders, and 2D pixel work created randomly or as supporting assets for games.
+        </p>
+      </div>
+
+      <div class="random-grid">
+        <!-- UI Item -->
+        <div class="random-card">
+          <div class="random-preview">
+            <i class="fa-solid fa-window-maximize random-icon"></i>
+            <span class="random-type-tag">UI / UX</span>
+          </div>
+          <div class="random-body">
+            <h4>Fantasy RPG Game HUD & Shop</h4>
+            <p>Designed in Figma, imported into Roblox with responsive autolayout and custom tween animations.</p>
+          </div>
+        </div>
+
+        <!-- 3D Item -->
+        <div class="random-card">
+          <div class="random-preview">
+            <i class="fa-solid fa-cubes random-icon"></i>
+            <span class="random-type-tag">3D Modeling</span>
+          </div>
+          <div class="random-body">
+            <h4>Stylized Low-Poly Weapon Pack</h4>
+            <p>Modeled and UV unwrapped in Blender. Clean topology optimized for mobile and Roblox polycount budgets.</p>
+          </div>
+        </div>
+
+        <!-- 2D / Shader Item -->
+        <div class="random-card">
+          <div class="random-preview">
+            <i class="fa-solid fa-wand-magic-sparkles random-icon"></i>
+            <span class="random-type-tag">Shaders / VFX</span>
+          </div>
+          <div class="random-body">
+            <h4>Stylized Water & Dissolve Shaders</h4>
+            <p>Created with Unity Shader Graph and Roblox particle emitters with animated beam highlights.</p>
+          </div>
+        </div>
+
+        <!-- UI Item 2 -->
+        <div class="random-card">
+          <div class="random-preview">
+            <i class="fa-solid fa-compass-drafting random-icon"></i>
+            <span class="random-type-tag">Interactive UI</span>
+          </div>
+          <div class="random-body">
+            <h4>Radial Wheel Selection Menu</h4>
+            <p>Gamepad and mouse directional weapon/item selection menu with dynamic spring-based scaling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CONTACT -->
+  <section class="section alt-bg" id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <span class="section-tag">Let's Connect</span>
+        <h2 class="contact-title">Interested in hiring or commissioning?</h2>
+        <p class="contact-desc">
+          Available for Roblox scripting commissions, complete game system integrations, and Unity gameplay coding. Fast turnaround and clean, reliable code.
+        </p>
+
+        <div class="contact-channels">
+          <div class="contact-item">
+            <i class="fa-brands fa-discord"></i>
+            <div>
+              <span class="contact-label">Discord</span>
+              <span class="contact-val">@toccata_dev</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-cube"></i>
+            <div>
+              <span class="contact-label">Roblox DevForum</span>
+              <span class="contact-val">@Toccata</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <span class="contact-label">Email</span>
+              <span class="contact-val">toccata.gamedev@example.com</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-brands fa-github"></i>
+            <div>
+              <span class="contact-label">GitHub</span>
+              <span class="contact-val">github.com/toccata</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-actions">
+          <a href="mailto:toccata.gamedev@example.com" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i> Send Commission Request
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Toccata. Built with pure HTML, CSS & Vanilla JavaScript.</p>
+      <div class="footer-links">
+        <a href="#hero"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- System Info Widget / Modal (Opens on System Card Click) -->
+  <div class="modal-overlay" id="systemWidgetModal" aria-hidden="true" role="dialog">
+    <div class="modal-window">
+      <button class="modal-close" id="modalClose" aria-label="Close widget">&times;</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Dynamically populated by main.js with system architecture, networking flow & specs -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
