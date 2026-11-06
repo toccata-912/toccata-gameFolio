@@ -1,170 +1,206 @@
 /**
- * Main Interactive Portfolio Script
- * - Smooth navigation & mobile drawer
- * - Interactive System Spec Widget (Click card -> Opens detailed architectural breakdown)
+ * Retro 1980s/90s Desktop GUI Engine (Static Page Layout)
+ * Handles:
+ * - Real-time system clock in top menubar
+ * - Procedural 1-Bit Dithered avatar (canvas pixel drawing)
+ * - Modal spec inspector widget on clicking system cards
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Nav Toggle
-  const mobileToggle = document.getElementById('mobileToggle');
-  const navLinks = document.querySelector('.nav-links');
+  // 1. REAL-TIME RETRO CLOCK
+  const clockEl = document.getElementById('systemClock');
+  function updateClock() {
+    const now = new Date();
+    if (clockEl) {
+      clockEl.textContent = now.toLocaleTimeString('en-US', { hour12: true });
+    }
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
 
-  if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
+  // 2. PROCEDURAL 1-BIT DITHERED AVATAR (MacPaint style)
+  const canvas = document.getElementById('avatarCanvas');
+  if (canvas && canvas.getContext) {
+    const ctx = canvas.getContext('2d');
+    const w = canvas.width;
+    const h = canvas.height;
+
+    // Dithered background (Bayer-like alternating pixel pattern)
+    const imgData = ctx.createImageData(w, h);
+    const data = imgData.data;
+
+    for (let y = 0; y < h; y++) {
+      for (let x = 0; x < w; x++) {
+        const idx = (y * w + x) * 4;
+        const isDither = (x + y) % 3 === 0;
+        const color = isDither ? 0 : 255;
+        data[idx] = color;     // R
+        data[idx + 1] = color; // G
+        data[idx + 2] = color; // B
+        data[idx + 3] = 255;   // Alpha
+      }
+    }
+    ctx.putImageData(imgData, 0, 0);
+
+    // 1-Bit Pixel Face & Headset (Brutalist black silhouette)
+    ctx.fillStyle = '#000000';
+
+    // Head base silhouette
+    ctx.fillRect(36, 32, 56, 68);
+
+    // Face inner cut
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(40, 36, 48, 60);
+
+    // Sunglasses
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(44, 52, 18, 12);
+    ctx.fillRect(66, 52, 18, 12);
+    ctx.fillRect(60, 56, 8, 4); // Bridge
+
+    // Glare on sunglasses
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(46, 54, 4, 4);
+    ctx.fillRect(68, 54, 4, 4);
+
+    // Smirk
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(52, 80, 24, 4);
+    ctx.fillRect(72, 76, 4, 4);
+
+    // Headphones
+    ctx.fillRect(30, 48, 8, 24);
+    ctx.fillRect(90, 48, 8, 24);
+    ctx.fillRect(34, 28, 60, 6);
   }
 
-  // Close mobile nav on click
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (navLinks.classList.contains('open')) {
-        navLinks.classList.remove('open');
-      }
-    });
-  });
-
-  // Systems Technical Specifications (Widget Database)
-  const systemsSpecs = {
+  // 3. TECHNICAL SPECIFICATIONS DATABASE (SYSTEM INSPECTOR WIDGET)
+  const systemDatabase = {
     'sys-combat': {
-      title: 'Server-Authoritative Melee & Hitbox System',
-      platform: 'Roblox Luau • Anti-Exploit Combat Networking',
-      overview: 'A high-speed melee combat architecture built to eliminate client spoofing, reach-extender exploits, and hit desync over high-latency connections.',
-      howItWasMade: [
-        '<strong>Client-Side Prediction:</strong> Client immediately triggers attack animations, swing trails, and screen juice without waiting for a server round-trip, keeping inputs feeling instant.',
-        '<strong>Snapshot Interpolation & Ping Compensation:</strong> The client sends an attack packet with target timestamps. The server rolls back victim bounding positions by attacker latency to confirm reach accuracy.',
-        '<strong>Server-Cast Line-of-Sight:</strong> Multi-point raycasts verify unobstructed line of sight between attacker PrimaryPart and victim bounding box to prevent wall-hacking.',
-        '<strong>Combo State Machine:</strong> Server tracks player action states to enforce cooldown windows and combo chains, blocking rapid-fire macro tools.'
+      title: 'SERVER-AUTHORITATIVE MELEE & HITBOX PIPELINE',
+      platform: 'PLATFORM: ROBLOX LUAU // STRICT_NETCODE',
+      overview: 'High-speed multiplayer combat architecture engineered to eliminate range-extenders, client hit spoofing, and high-latency sync issues.',
+      breakdown: [
+        'CLIENT-SIDE PREDICTION: Client triggers attack swing and sound immediately for responsive feedback.',
+        'SERVER TIMESTAMP VALIDATION: Attack payload snapshot includes ping offset; server rewinds positions.',
+        'RAYCAST LINE-OF-SIGHT: Multi-point server casts verify zero obstacle occlusion between entities.',
+        'COMBO STATE MACHINE: Server guards combo chain windows, blocking rapid-fire macro execution.'
       ],
-      technologies: ['Luau', 'RaycastParams', 'TweenService', 'State Machine', 'Client Prediction']
+      tags: ['LUAU', 'RAYCAST_PARAMS', 'REPLICATION', 'PREDICTION', 'STATE_MACHINE']
     },
     'sys-inventory': {
-      title: 'Production Inventory & Data Sync Pipeline',
-      platform: 'Roblox Luau • ProfileService & ReplicaService',
-      overview: 'A bulletproof, transactional inventory and player data backend engineered for high concurrent player counts where duplication and data loss cannot occur.',
-      howItWasMade: [
-        '<strong>Session-Locking Guard:</strong> Uses ProfileService to prevent multiple game servers from loading the same profile simultaneously during rapid player teleportation.',
-        '<strong>Atomic Item Operations:</strong> All item moves, swaps, and trade transactions are performed in isolated atomic locks. If any assert fails, the state rolls back cleanly.',
-        '<strong>Optimized Client Replication:</strong> Integrates ReplicaService to replicate only modified sub-keys instead of transmitting entire data dictionaries on every update.',
-        '<strong>Data Migration Schema:</strong> Version-tagged player profiles automatically apply patch migrations when updates add new item formats or adjust stats.'
+      title: 'PRODUCTION INVENTORY & DATA PIPELINE',
+      platform: 'PLATFORM: ROBLOX LUAU // PROFILE_SERVICE + REPLICA',
+      overview: 'Session-locking datastore wrapper for high-concurrency games where item duplication or loss is unacceptable.',
+      breakdown: [
+        'SESSION-LOCKING GUARD: Prevents simultaneous profile loading across multiple servers during teleports.',
+        'ATOMIC TRANSACTION LOG: Inventory swaps execute in an atomic try-catch block with rollback protection.',
+        'INCREMENTAL REPLICATION: Uses ReplicaService to sync mutated indices instead of entire tables.',
+        'MIGRATION GUARDS: Versioning schema applies automatic schema updates to older player data.'
       ],
-      technologies: ['ProfileService', 'ReplicaService', 'Luau Strict Typing', 'Rojo']
+      tags: ['PROFILE_SERVICE', 'REPLICA_SERVICE', 'LUAU_TYPES', 'SESSION_LOCK']
     },
     'sys-ability': {
-      title: 'ScriptableObject Ability & Buff Framework',
-      platform: 'Unity C# • Data-Driven Architecture',
-      overview: 'A decoupled combat ability and status effect system allowing game designers to construct spells, passives, and buffs without modifying core codebase.',
-      howItWasMade: [
-        '<strong>Data-Driven Definitions:</strong> Spells and passives are authored as ScriptableObject assets containing cooldown, cost, animations, and timeline event tracks.',
-        '<strong>Polymorphic Action Execution:</strong> Uses an execution node pattern where abilities composite modular tasks (e.g., SpawnProjectile, ApplyBuff, AreaOfEffect).',
-        '<strong>Dynamic Status Effect Pipeline:</strong> Stackable buffs/debuffs (burn, freeze, speed modifiers) utilize ticking tickables that recalculate final character stat values in real-time.',
-        '<strong>Input Buffering:</strong> Pre-buffers abilities activated mid-animation, automatically executing them the frame recovery frames finish.'
+      title: 'MODULAR ABILITY & STATUS EFFECT PIPELINE',
+      platform: 'PLATFORM: UNITY C# // SCRIPTABLE_OBJECTS',
+      overview: 'Decoupled data-driven combat abilities with cooldown buffering and polymorphic actions.',
+      breakdown: [
+        'SCRIPTABLE_OBJECT BLUEPRINTS: Designers author spells, costs, and timeline events without C# code changes.',
+        'ACTION COMPOSITING: Modular execution nodes (SpawnProjectile, ApplyBuff, AreaOfEffect).',
+        'DYNAMIC BUFF STACKS: Tickable modifier pipeline recalculating character stats continuously.',
+        'PRE-BUFFERING: Inputs triggered mid-animation automatically fire upon recovery frame.'
       ],
-      technologies: ['C#', 'ScriptableObjects', 'Input System', 'Unity URP']
+      tags: ['C#', 'SCRIPTABLE_OBJECTS', 'BUFFERING', 'INPUT_SYSTEM']
     },
     'sys-pet': {
-      title: 'Client-Replicated Pet Follower Physics',
-      platform: 'Roblox Luau • Spring Dynamics & Curve Math',
-      overview: 'A lightweight pet companion follower that bypasses traditional server physics constraints to allow hundreds of active pets in a server with zero network lag.',
-      howItWasMade: [
-        '<strong>Server-Side Target Assignment:</strong> The server only tracks slot offsets (e.g., Pet Slot #1 is positioned 3 studs behind and 2 studs to the right of the character).',
-        '<strong>Client-Side Spring Simulation:</strong> Each client simulates pet movement locally using Hooke’s Law spring-damper equations inside <code>RunService.RenderStepped</code>.',
-        '<strong>Bezier Arching & Bobbing:</strong> Procedural floating bob and banking tilts when the player turns sharply or enters airborne states.',
-        '<strong>LOD Distance Culling:</strong> Automatically throttles update rates for pets belonging to players further away to preserve mobile frame rates.'
+      title: 'CLIENT-REPLICATED PET FOLLOWER PHYSICS',
+      platform: 'PLATFORM: ROBLOX LUAU // HOOKES_LAW_MATH',
+      overview: 'Smooth spring-damper companion physics simulated strictly on client RenderStepped with zero server overhead.',
+      breakdown: [
+        'ZERO SERVER CONSTRAINTS: Eliminates AlignPosition/BodyMovers from consuming server physics cycles.',
+        'RENDER_STEPPED SPRING MATH: Hooke\'s Law damping provides natural bobbing, banking, and bounce.',
+        'BEZIER CURVE TRAVEL: Flying pets navigate curved paths around obstacles when catching up.',
+        'DISTANCE LOD CULLING: Throttles calculation ticks on far entities to protect mobile frame rates.'
       ],
-      technologies: ['Luau Math', 'RenderStepped', 'Spring Damper', 'Bezier Curves']
+      tags: ['LUAU_MATH', 'SPRING_DAMPING', 'RENDER_STEPPED', 'LOD']
     },
     'sys-dialogue': {
-      title: 'Branching Node Dialogue & Quest Trigger System',
-      platform: 'Roblox Luau • Graph Nodes & UI Signals',
-      overview: 'A responsive dialogue and NPC interaction tree supporting player choices, reputation requirements, animated typewriter text, and quest triggers.',
-      howItWasMade: [
-        '<strong>Node Graph Structure:</strong> Dialogue trees are structured as nested Luau tables with condition predicates (e.g., <code>hasItem(id)</code> or <code>reputation > 50</code>).',
-        '<strong>Rich-Text Typewriter Engine:</strong> Custom text streamer parsing UTF-8 characters and BBCode tags without breaking format tags mid-animation.',
-        '<strong>Signal-Driven Quests:</strong> Dialog choices fire observer events that quest controllers listen to, cleanly decoupling UI from mission state machines.'
+      title: 'BRANCHING NODE DIALOGUE & QUEST ENGINE',
+      platform: 'PLATFORM: ROBLOX LUAU // GRAPH_NODES',
+      overview: 'Signal-driven dialogue tree with rich-text typewriter animation and quest state hooks.',
+      breakdown: [
+        'NODE GRAPH PARSER: Nested table structure evaluating player prerequisites (reputation, items).',
+        'UTF-8 TYPEWRITER: Safely streams text without splitting multibyte characters or BBCode markup.',
+        'OBSERVER SIGNALS: Choice nodes dispatch event signals directly to decoupled quest managers.'
       ],
-      technologies: ['Luau', 'Signal / GoodSignal', 'UI Tweens', 'RichText']
+      tags: ['LUAU', 'GOOD_SIGNAL', 'UI_TWEEN', 'RICH_TEXT']
     },
     'sys-ai': {
-      title: 'Hierarchical AI Perception & State Machine',
-      platform: 'Unity C# • Enemy Tactical AI',
-      overview: 'An intelligent enemy controller combining field-of-view perception, acoustic alert propagation, and hierarchical state machines for stealth and combat encounters.',
-      howItWasMade: [
-        '<strong>Hierarchical State Machine (HFSM):</strong> Cleanly separates root states (Peaceful, Suspicious, Combat) into granular child behaviors (Investigate, Flank, Retreat).',
-        '<strong>Vision & Hearing Sensor Cones:</strong> Raycast vision checks combined with an acoustic alert event bus that draws nearby guards when weapons fire or footfalls land.',
-        '<strong>Dynamic NavMesh Pathfinding:</strong> Intelligent waypoint traversal with path smoothing, dynamic obstacle avoidance, and line-of-sight flanking routines.'
+      title: 'HIERARCHICAL AI PERCEPTION & FSM',
+      platform: 'PLATFORM: UNITY C# // TACTICAL_ENEMY_AI',
+      overview: 'Tactical state machine with raycast vision cones and acoustic listener events.',
+      breakdown: [
+        'HIERARCHICAL FSM: Decouples root states (Peaceful, Suspicious, Combat) into child routines.',
+        'SENSORY PERCEPTION: Vision frustum raycasting combined with an acoustic alert event bus.',
+        'NAVMESH PATH FLANKING: Dynamic waypoint traversal with path smoothing and cover alignment.'
       ],
-      technologies: ['C#', 'NavMesh', 'HFSM Pattern', 'Sensory Cones']
+      tags: ['C#', 'NAVMESH', 'HFSM', 'PERCEPTION_CONES']
     }
   };
 
-  // Modal / Widget Elements
-  const modalOverlay = document.getElementById('systemWidgetModal');
-  const modalBody = document.getElementById('modalBody');
-  const modalClose = document.getElementById('modalClose');
+  // 4. MODAL INSPECTOR LOGIC
+  const modalOverlay = document.getElementById('specModalOverlay');
+  const modalHeading = document.getElementById('specModalHeading');
+  const modalPlatform = document.getElementById('specModalPlatform');
+  const modalOverview = document.getElementById('specModalOverview');
+  const modalList = document.getElementById('specModalList');
+  const modalTags = document.getElementById('specModalTags');
+  const modalClose = document.getElementById('specModalClose');
+  const modalDoneBtn = document.getElementById('specModalDoneBtn');
 
-  function openSystemWidget(systemId) {
-    const data = systemsSpecs[systemId];
-    if (!data) return;
+  function openSpecModal(systemId) {
+    const data = systemDatabase[systemId];
+    if (!data || !modalOverlay) return;
 
-    modalBody.innerHTML = `
-      <div class="widget-header">
-        <span class="widget-pill">${data.platform}</span>
-        <h3 class="widget-title">${data.title}</h3>
-      </div>
+    modalHeading.textContent = data.title;
+    modalPlatform.textContent = data.platform;
+    modalOverview.textContent = data.overview;
 
-      <div class="widget-section">
-        <h4><i class="fa-solid fa-align-left"></i> System Overview</h4>
-        <p>${data.overview}</p>
-      </div>
-
-      <div class="widget-section">
-        <h4><i class="fa-solid fa-code-branch"></i> How The System Was Made</h4>
-        <ul>
-          ${data.howItWasMade.map(point => `<li>${point}</li>`).join('')}
-        </ul>
-      </div>
-
-      <div class="widget-section">
-        <h4><i class="fa-solid fa-microchip"></i> Key Architecture & Tools</h4>
-        <div class="tech-tag-row">
-          ${data.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-        </div>
-      </div>
-    `;
+    modalList.innerHTML = data.breakdown.map(item => `<li>${item}</li>`).join('');
+    modalTags.innerHTML = data.tags.map(t => `<span class="retro-tag">${t}</span>`).join('');
 
     modalOverlay.classList.add('active');
     modalOverlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
-  function closeSystemWidget() {
-    modalOverlay.classList.remove('active');
-    modalOverlay.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+  function closeSpecModal() {
+    if (modalOverlay) {
+      modalOverlay.classList.remove('active');
+      modalOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
   }
 
-  // Attach click listener to each system card
-  document.querySelectorAll('.system-card').forEach(card => {
+  document.querySelectorAll('.system-subwindow').forEach(card => {
     card.addEventListener('click', () => {
-      const systemId = card.getAttribute('data-system-id');
-      openSystemWidget(systemId);
+      const sysId = card.getAttribute('data-system-id');
+      openSpecModal(sysId);
     });
   });
 
-  if (modalClose) {
-    modalClose.addEventListener('click', closeSystemWidget);
-  }
+  if (modalClose) modalClose.addEventListener('click', closeSpecModal);
+  if (modalDoneBtn) modalDoneBtn.addEventListener('click', closeSpecModal);
 
   if (modalOverlay) {
     modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) closeSystemWidget();
+      if (e.target === modalOverlay) closeSpecModal();
     });
   }
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-      closeSystemWidget();
+    if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+      closeSpecModal();
     }
   });
 });
