@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TOCCATA // GAME_DEV [SYSTEM_7.5]</title>
-  <meta name="description" content="Retro 90s Desktop GUI Game Dev Portfolio for Toccata. Roblox Luau & Unity C# gameplay engineering." />
+  <title>Toccata // Game Systems Programmer</title>
+  <meta name="description" content="Portfolio of Toccata - Game Systems Programmer specializing in Roblox (Luau) and Unity (C#)." />
 
-  <!-- Retro Google Fonts -->
+  <!-- Modern Clean Readable Monospace & Neo-Grotesque Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -17,20 +17,24 @@
 
   <!-- TOP VINTAGE SYSTEM 7 MENUBAR -->
   <header class="mac-menubar">
-    <div class="menubar-left">
+    <div class="menubar-brand">
       <span class="apple-logo"></span>
-      <a href="#hero" class="menu-item">[ HOME ]</a>
-      <a href="#systems" class="menu-item">[ SYSTEMS ]</a>
-      <a href="#featured" class="menu-item">[ FULL_GAMES ]</a>
-      <a href="#creative-lab" class="menu-item">[ UI/3D/2D ]</a>
-      <a href="#contact" class="menu-item contact-item">[ CONTACT ]</a>
+      <span class="brand-title">TOCCATA_OS</span>
     </div>
-    <div class="menubar-center">
-      <span class="system-marquee">OS: SYSTEM 7.5.3 // TOCCATA_GAMEFOLIO // 640KB RAM OK</span>
-    </div>
-    <div class="menubar-right">
-      <span class="clock-display" id="systemClock">12:00:00 PM</span>
-    </div>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+      <span class="menu-btn-icon">☰</span>
+    </button>
+
+    <!-- Nav buttons positioned cleanly on the RIGHT (collapsible on mobile) -->
+    <nav class="menubar-nav" id="menubarNav">
+      <a href="#hero" class="menu-item">[ Home ]</a>
+      <a href="#systems" class="menu-item">[ Systems ]</a>
+      <a href="#featured" class="menu-item">[ Full Games ]</a>
+      <a href="#creative-lab" class="menu-item">[ UI / 3D / 2D ]</a>
+      <a href="#contact" class="menu-item contact-item">[ Contact ]</a>
+    </nav>
   </header>
 
   <!-- MAIN SCROLLABLE CONTAINER -->
@@ -44,51 +48,35 @@
         <div class="win-titlebar">
           <span class="win-bullet">■</span>
           <div class="win-stripes"></div>
-          <span class="win-title">PROFILE.PNG [VIEW: 100%]</span>
+          <span class="win-title">Profile.png [View: 100%]</span>
           <div class="win-stripes"></div>
           <span class="win-btn-static">[SYS]</span>
         </div>
 
         <div class="win-content">
           <div class="avatar-bio-grid">
-            <!-- 1-Bit Dither Avatar Canvas -->
-            <div class="dither-avatar-box">
-              <canvas id="avatarCanvas" width="128" height="128" class="pixel-avatar"></canvas>
+            <!-- Profile Avatar from pictures/pfp.png -->
+            <div class="avatar-frame-box">
+              <img src="pictures/pfp.png" alt="Toccata Profile Avatar" class="profile-avatar-img" />
               <div class="scanline-overlay"></div>
-              <span class="avatar-tag">1-BIT // 128x128</span>
+              <span class="avatar-tag">AVATAR // PFP.PNG</span>
             </div>
 
             <!-- Bio Text -->
             <div class="bio-details">
-              <div class="status-badge">● ONLINE // FOR ROBLOX & UNITY COMMISSIONS</div>
-              <h1 class="glitch-title">TOCCATA</h1>
-              <p class="role-desc">GAMEPLAY & SYSTEMS PROGRAMMER [ROBLOX LUAU // UNITY C#]</p>
+              <h1 class="hero-name">Toccata</h1>
+              <p class="role-desc">Gameplay & Systems Programmer [Roblox Luau // Unity C#]</p>
               
               <div class="ruler-line"></div>
 
               <p class="summary-text">
-                SPECIALIZING IN SERVER-AUTHORITATIVE NETCODE, CLIENT-PREDICTED COMBAT MECHANICS, HIGH-CONCURRENCY DATA PIPELINES (PROFILESERVICE & REPLICASERVICE), AND SNAPPY GAME FEEL.
+                Specializing in server-authoritative netcode, client-predicted combat mechanics, high-concurrency data pipelines (ProfileService & ReplicaService), and snappy game feel.
               </p>
 
-              <!-- Progress Bar -->
-              <div class="progress-bar-container">
-                <div class="progress-label">
-                  <span>SYSTEM_LOAD: 99.4% [STABLE]</span>
-                  <span>MEMORY: CLEAN</span>
-                </div>
-                <div class="segmented-bar">
-                  <div class="segment fill"></div><div class="segment fill"></div><div class="segment fill"></div>
-                  <div class="segment fill"></div><div class="segment fill"></div><div class="segment fill"></div>
-                  <div class="segment fill"></div><div class="segment fill"></div><div class="segment fill"></div>
-                  <div class="segment fill"></div><div class="segment fill"></div><div class="segment fill"></div>
-                  <div class="segment fill"></div><div class="segment fill"></div><div class="segment empty"></div>
-                </div>
-              </div>
-
               <div class="window-btn-bar">
-                <a href="#systems" class="retro-btn">[ VIEW_SYSTEMS ]</a>
-                <a href="#featured" class="retro-btn">[ FULL_GAMES ]</a>
-                <a href="#contact" class="retro-btn invert">[ HIRE_ME.BAT ]</a>
+                <a href="#systems" class="retro-btn">[ View Systems ]</a>
+                <a href="#featured" class="retro-btn">[ Full Games ]</a>
+                <a href="#contact" class="retro-btn invert">[ Contact & Links ]</a>
               </div>
             </div>
           </div>
@@ -97,191 +85,213 @@
     </header>
 
     <!-- ===================================================================
-         SECTION 2: SYSTEMS CATALOGUE (GIFS/VIDEOS, NO RAW CODE -> CLICK OPENS WIDGET)
+         SECTION 2: SYSTEMS CATALOGUE (SCROLLABLE CONTAINER + ROBLOX/UNITY TOGGLE)
          =================================================================== -->
     <section class="page-section" id="systems">
       <div class="retro-window cream-theme">
         <div class="win-titlebar">
           <span class="win-bullet">■</span>
           <div class="win-stripes"></div>
-          <span class="win-title">SYSTEMS.SYS // MECHANICS_CATALOGUE [6 ITEMS]</span>
+          <span class="win-title">Systems.sys // Mechanics Catalogue</span>
           <div class="win-stripes"></div>
           <span class="win-btn-static">[DIR]</span>
         </div>
 
         <div class="win-content">
-          <div class="section-banner">
-            <span class="banner-tag">&gt;&gt; INTERACTIVE CATALOGUE</span>
-            <p class="banner-desc">
-              MODULAR GAME MECHANICS, BACKEND DATA ARCHITECTURES, AND NETWORKING SOLUTIONS. CLICK ANY SYSTEM WINDOW TO OPEN THE DETAILED TECHNICAL SPECIFICATION WIDGET.
-            </p>
+          <div class="systems-toolbar">
+            <div class="section-banner">
+              <span class="banner-tag">&gt;&gt; Interactive Catalogue</span>
+              <p class="banner-desc">
+                Modular game mechanics, backend data architectures, and networking solutions. Click any system card to view detailed specifications.
+              </p>
+            </div>
+
+            <!-- Platform Switcher (Defaults to Roblox) -->
+            <div class="platform-switch-box">
+              <span class="switch-label">Filter:</span>
+              <div class="segmented-control" role="tablist">
+                <button class="seg-btn active" id="btnFilterRoblox" data-platform="roblox" role="tab" aria-selected="true">
+                  <span class="seg-icon">🟥</span> Roblox Luau
+                </button>
+                <button class="seg-btn" id="btnFilterUnity" data-platform="unity" role="tab" aria-selected="false">
+                  <span class="seg-icon">🔷</span> Unity C#
+                </button>
+              </div>
+            </div>
           </div>
 
           <div class="ruler-line"></div>
 
-          <!-- Systems Grid -->
-          <div class="systems-retro-grid">
+          <!-- Scrollable Systems Container -->
+          <div class="systems-scroll-pane" id="systemsScrollPane">
+            <div class="systems-retro-grid" id="systemsGrid">
 
-            <!-- System 1 -->
-            <div class="system-subwindow" data-system-id="sys-combat">
-              <div class="subwin-titlebar">
-                <span class="subwin-bullet">■</span>
-                <span class="subwin-name">SYS_01_COMBAT.SYS</span>
-                <span class="subwin-tag roblox-tag">ROBLOX</span>
-              </div>
-              <div class="subwin-body">
-                <div class="crt-media-frame">
-                  <!-- Replace with: <video src="assets/videos/combat.mp4" autoplay loop muted playsinline></video> -->
-                  <div class="crt-placeholder">
-                    <pre>
-  [CLIENT: ATTACK]
+              <!-- Roblox System 1 -->
+              <div class="system-subwindow" data-system-id="sys-combat" data-platform="roblox">
+                <div class="subwin-titlebar">
+                  <span class="subwin-bullet">■</span>
+                  <span class="subwin-name">SYS_01_Combat.sys</span>
+                  <span class="subwin-tag roblox-tag">Roblox</span>
+                </div>
+                <div class="subwin-body">
+                  <div class="crt-media-frame">
+                    <div class="crt-placeholder">
+                      <pre>
+  [Client: Attack]
          │
-  ▼ [PING ROLLBACK]
-  [SERVER: RAYCAST]
+  ▼ [Ping Rollback]
+  [Server: Raycast]
          │
-  [HITBOX APPROVED]</pre>
-                    <span class="crt-label">[ LOOPING VIDEO / GIF ]</span>
+  [Hitbox Validated]</pre>
+                      <span class="crt-label">[ Looping Video / GIF ]</span>
+                    </div>
                   </div>
+                  <h3 class="system-title">Server-Authoritative Melee & Hitbox</h3>
+                  <p class="system-desc">
+                    Anti-exploit melee combat with client-side prediction, spatial bounding checks, and rollback lag verification.
+                  </p>
+                  <button class="retro-btn btn-sm">[ Inspect System ]</button>
                 </div>
-                <h3 class="system-title">SERVER-AUTHORITATIVE MELEE & HITBOX</h3>
-                <p class="system-desc">
-                  Anti-exploit melee combat with client-side prediction, spatial bounding checks, and rollback lag verification.
-                </p>
-                <button class="retro-btn btn-sm">[ INSPECT_SYSTEM ]</button>
               </div>
-            </div>
 
-            <!-- System 2 -->
-            <div class="system-subwindow" data-system-id="sys-inventory">
-              <div class="subwin-titlebar">
-                <span class="subwin-bullet">■</span>
-                <span class="subwin-name">SYS_02_INVENTORY.SYS</span>
-                <span class="subwin-tag roblox-tag">ROBLOX</span>
-              </div>
-              <div class="subwin-body">
-                <div class="crt-media-frame">
-                  <div class="crt-placeholder">
-                    <pre>
- [PROFILE_SERVICE]
-  ├─ SESSION LOCK
-  ├─ ATOMIC SWAP
-  └─ REPLICA SYNC</pre>
-                    <span class="crt-label">[ LOOPING VIDEO / GIF ]</span>
+              <!-- Roblox System 2 -->
+              <div class="system-subwindow" data-system-id="sys-inventory" data-platform="roblox">
+                <div class="subwin-titlebar">
+                  <span class="subwin-bullet">■</span>
+                  <span class="subwin-name">SYS_02_Inventory.sys</span>
+                  <span class="subwin-tag roblox-tag">Roblox</span>
+                </div>
+                <div class="subwin-body">
+                  <div class="crt-media-frame">
+                    <div class="crt-placeholder">
+                      <pre>
+ [ProfileService]
+  ├─ Session Lock
+  ├─ Atomic Swap
+  └─ Replica Sync</pre>
+                      <span class="crt-label">[ Looping Video / GIF ]</span>
+                    </div>
                   </div>
+                  <h3 class="system-title">Production Inventory & Data Pipeline</h3>
+                  <p class="system-desc">
+                    Session-locking ProfileService architecture with atomic item operations, auto-migrations, and ReplicaService synchronization.
+                  </p>
+                  <button class="retro-btn btn-sm">[ Inspect System ]</button>
                 </div>
-                <h3 class="system-title">PRODUCTION INVENTORY & DATA PIPELINE</h3>
-                <p class="system-desc">
-                  Session-locking ProfileService architecture with atomic item operations, auto-migrations, and ReplicaService synchronization.
-                </p>
-                <button class="retro-btn btn-sm">[ INSPECT_SYSTEM ]</button>
               </div>
-            </div>
 
-            <!-- System 3 -->
-            <div class="system-subwindow" data-system-id="sys-ability">
-              <div class="subwin-titlebar">
-                <span class="subwin-bullet">■</span>
-                <span class="subwin-name">SYS_03_ABILITIES.SYS</span>
-                <span class="subwin-tag unity-tag">UNITY</span>
-              </div>
-              <div class="subwin-body">
-                <div class="crt-media-frame">
-                  <div class="crt-placeholder">
-                    <pre>
- [SCRIPTABLE_OBJ]
-  ├─ BUFFERED INPUT
-  ├─ STACK MODIFIERS
-  └─ TICKABLE BUFFS</pre>
-                    <span class="crt-label">[ LOOPING VIDEO / GIF ]</span>
+              <!-- Roblox System 3 -->
+              <div class="system-subwindow" data-system-id="sys-pet" data-platform="roblox">
+                <div class="subwin-titlebar">
+                  <span class="subwin-bullet">■</span>
+                  <span class="subwin-name">SYS_03_PetMath.sys</span>
+                  <span class="subwin-tag roblox-tag">Roblox</span>
+                </div>
+                <div class="subwin-body">
+                  <div class="crt-media-frame">
+                    <div class="crt-placeholder">
+                      <pre>
+ [Hooke's Law Math]
+  ├─ Zero Server Lag
+  ├─ Bezier Arching
+  └─ RenderStepped</pre>
+                      <span class="crt-label">[ Looping Video / GIF ]</span>
+                    </div>
                   </div>
+                  <h3 class="system-title">Client-Replicated Pet Follower Physics</h3>
+                  <p class="system-desc">
+                    Lightweight companion physics simulated purely on client RenderStepped with spring-damper equations and bezier curves.
+                  </p>
+                  <button class="retro-btn btn-sm">[ Inspect System ]</button>
                 </div>
-                <h3 class="system-title">MODULAR ABILITY & BUFF FRAMEWORK</h3>
-                <p class="system-desc">
-                  Data-driven ability pipeline with cooldown pre-buffering, polymorphic execution nodes, and stackable status modifiers.
-                </p>
-                <button class="retro-btn btn-sm">[ INSPECT_SYSTEM ]</button>
               </div>
-            </div>
 
-            <!-- System 4 -->
-            <div class="system-subwindow" data-system-id="sys-pet">
-              <div class="subwin-titlebar">
-                <span class="subwin-bullet">■</span>
-                <span class="subwin-name">SYS_04_PET_MATH.SYS</span>
-                <span class="subwin-tag roblox-tag">ROBLOX</span>
-              </div>
-              <div class="subwin-body">
-                <div class="crt-media-frame">
-                  <div class="crt-placeholder">
-                    <pre>
- [HOOKES_LAW_MATH]
-  ├─ ZERO SERVER LAG
-  ├─ BEZIER ARCHING
-  └─ RENDER_STEPPED</pre>
-                    <span class="crt-label">[ LOOPING VIDEO / GIF ]</span>
+              <!-- Roblox System 4 -->
+              <div class="system-subwindow" data-system-id="sys-dialogue" data-platform="roblox">
+                <div class="subwin-titlebar">
+                  <span class="subwin-bullet">■</span>
+                  <span class="subwin-name">SYS_04_Dialogue.sys</span>
+                  <span class="subwin-tag roblox-tag">Roblox</span>
+                </div>
+                <div class="subwin-body">
+                  <div class="crt-media-frame">
+                    <div class="crt-placeholder">
+                      <pre>
+ [Dialogue Graph]
+  ├─ UTF8 Typewriter
+  ├─ Reputation Check
+  └─ Quest Triggers</pre>
+                      <span class="crt-label">[ Looping Video / GIF ]</span>
+                    </div>
                   </div>
+                  <h3 class="system-title">Branching Node Dialogue & Quest Engine</h3>
+                  <p class="system-desc">
+                    Node-tree dialogue system with prerequisite condition evaluation, animated rich-text typewriter, and signal-driven quest events.
+                  </p>
+                  <button class="retro-btn btn-sm">[ Inspect System ]</button>
                 </div>
-                <h3 class="system-title">CLIENT-REPLICATED PET FOLLOWER PHYSICS</h3>
-                <p class="system-desc">
-                  Lightweight companion physics simulated purely on client RenderStepped with spring-damper equations and bezier curves.
-                </p>
-                <button class="retro-btn btn-sm">[ INSPECT_SYSTEM ]</button>
               </div>
-            </div>
 
-            <!-- System 5 -->
-            <div class="system-subwindow" data-system-id="sys-dialogue">
-              <div class="subwin-titlebar">
-                <span class="subwin-bullet">■</span>
-                <span class="subwin-name">SYS_05_DIALOGUE.SYS</span>
-                <span class="subwin-tag roblox-tag">ROBLOX</span>
-              </div>
-              <div class="subwin-body">
-                <div class="crt-media-frame">
-                  <div class="crt-placeholder">
-                    <pre>
- [DIALOGUE_GRAPH]
-  ├─ UTF8 TYPEWRITER
-  ├─ REPUTATION CHECK
-  └─ QUEST TRIGGERS</pre>
-                    <span class="crt-label">[ LOOPING VIDEO / GIF ]</span>
+              <!-- Unity System 1 -->
+              <div class="system-subwindow" data-system-id="sys-ability" data-platform="unity">
+                <div class="subwin-titlebar">
+                  <span class="subwin-bullet">■</span>
+                  <span class="subwin-name">SYS_U01_Abilities.sys</span>
+                  <span class="subwin-tag unity-tag">Unity</span>
+                </div>
+                <div class="subwin-body">
+                  <div class="crt-media-frame">
+                    <div class="crt-placeholder">
+                      <pre>
+ [ScriptableObject]
+  ├─ Buffered Input
+  ├─ Stack Modifiers
+  └─ Tickable Buffs</pre>
+                      <span class="crt-label">[ Looping Video / GIF ]</span>
+                    </div>
                   </div>
+                  <h3 class="system-title">Modular Ability & Buff Framework</h3>
+                  <p class="system-desc">
+                    Data-driven ability pipeline with cooldown pre-buffering, polymorphic execution nodes, and stackable status modifiers.
+                  </p>
+                  <button class="retro-btn btn-sm">[ Inspect System ]</button>
                 </div>
-                <h3 class="system-title">BRANCHING NODE DIALOGUE & QUEST ENGINE</h3>
-                <p class="system-desc">
-                  Node-tree dialogue system with prerequisite condition evaluation, animated rich-text typewriter, and signal-driven quest events.
-                </p>
-                <button class="retro-btn btn-sm">[ INSPECT_SYSTEM ]</button>
               </div>
-            </div>
 
-            <!-- System 6 -->
-            <div class="system-subwindow" data-system-id="sys-ai">
-              <div class="subwin-titlebar">
-                <span class="subwin-bullet">■</span>
-                <span class="subwin-name">SYS_06_ENEMY_AI.SYS</span>
-                <span class="subwin-tag unity-tag">UNITY</span>
-              </div>
-              <div class="subwin-body">
-                <div class="crt-media-frame">
-                  <div class="crt-placeholder">
-                    <pre>
- [HIERARCHICAL FSM]
-  ├─ SENSORY CONE
-  ├─ ACOUSTIC ALERTS
-  └─ NAVMESH FLANK</pre>
-                    <span class="crt-label">[ LOOPING VIDEO / GIF ]</span>
+              <!-- Unity System 2 -->
+              <div class="system-subwindow" data-system-id="sys-ai" data-platform="unity">
+                <div class="subwin-titlebar">
+                  <span class="subwin-bullet">■</span>
+                  <span class="subwin-name">SYS_U02_EnemyAI.sys</span>
+                  <span class="subwin-tag unity-tag">Unity</span>
+                </div>
+                <div class="subwin-body">
+                  <div class="crt-media-frame">
+                    <div class="crt-placeholder">
+                      <pre>
+ [Hierarchical FSM]
+  ├─ Sensory Cone
+  ├─ Acoustic Alerts
+  └─ NavMesh Flank</pre>
+                      <span class="crt-label">[ Looping Video / GIF ]</span>
+                    </div>
                   </div>
+                  <h3 class="system-title">Hierarchical AI Perception & FSM</h3>
+                  <p class="system-desc">
+                    Modular enemy state machine featuring visual sensory cones, acoustic alert propagation, and dynamic NavMesh flanking.
+                  </p>
+                  <button class="retro-btn btn-sm">[ Inspect System ]</button>
                 </div>
-                <h3 class="system-title">HIERARCHICAL AI PERCEPTION & FSM</h3>
-                <p class="system-desc">
-                  Modular enemy state machine featuring visual sensory cones, acoustic alert propagation, and dynamic NavMesh flanking.
-                </p>
-                <button class="retro-btn btn-sm">[ INSPECT_SYSTEM ]</button>
               </div>
-            </div>
 
+            </div>
           </div>
+
+          <div class="scroll-pane-footer">
+            <span class="scroll-hint-text">↕ Scroll to browse more systems</span>
+            <span class="count-badge" id="systemCountBadge">Showing 4 Roblox Systems</span>
+          </div>
+
         </div>
       </div>
     </section>
@@ -294,16 +304,16 @@
         <div class="win-titlebar">
           <span class="win-bullet">■</span>
           <div class="win-stripes"></div>
-          <span class="win-title">PROJECTS.EXE // EXECUTABLE_GAMES [3 FOUND]</span>
+          <span class="win-title">Projects.exe // Executable Games [3 Found]</span>
           <div class="win-stripes"></div>
           <span class="win-btn-static">[RUN]</span>
         </div>
 
         <div class="win-content">
           <div class="section-banner">
-            <span class="banner-tag">&gt;&gt; FULL PRODUCTION EXPERIENCES</span>
+            <span class="banner-tag">&gt;&gt; Full Production Experiences</span>
             <p class="banner-desc">
-              COMPLETE PLAYABLE GAMES DEMONSTRATING END-TO-END CODE ARCHITECTURE, NETWORKING, AND DESIGN IMPLEMENTATION.
+              Complete playable games demonstrating end-to-end code architecture, networking, and gameplay polish.
             </p>
           </div>
 
@@ -316,39 +326,39 @@
             <div class="game-subwindow">
               <div class="subwin-titlebar">
                 <span class="subwin-bullet">■</span>
-                <span class="subwin-name">ROGUE_BLADE.EXE</span>
-                <span class="subwin-tag roblox-tag">ROBLOX</span>
+                <span class="subwin-name">Rogue_Blade.exe</span>
+                <span class="subwin-tag roblox-tag">Roblox</span>
               </div>
               <div class="subwin-body">
                 <div class="crt-media-frame">
                   <div class="crt-placeholder">
                     <pre>
 ╔═════════════════════════╗
-║  ROGUE BLADE: DUNGEONS  ║
-║  [ PROCEDURAL ARPG ]    ║
+║  Rogue Blade: Dungeons  ║
+║  [ Procedural ARPG ]    ║
 ╚═════════════════════════╝</pre>
-                    <span class="crt-label">[ GAMEPLAY VIDEO / CLIP ]</span>
+                    <span class="crt-label">[ Gameplay Video / Clip ]</span>
                   </div>
                 </div>
 
                 <div class="game-meta-row">
-                  <span class="meta-role">ROLE: LEAD PROGRAMMER</span>
+                  <span class="meta-role">Role: Lead Programmer</span>
                   <span class="meta-year">[2024]</span>
                 </div>
 
-                <h3 class="game-title">ROGUE BLADE: DUNGEONS</h3>
+                <h3 class="game-title">Rogue Blade: Dungeons</h3>
                 <p class="game-desc">
                   Multiplayer dungeon crawler featuring procedural room generation, server-authoritative combat, and networked loot instances.
                 </p>
 
                 <div class="spec-manifest">
-                  <div><strong>STACK:</strong> LUAU // ROJO // PROFILE_SERVICE</div>
-                  <div><strong>SYSTEMS:</strong> PROCEDURAL ROOMS, FAST MELEE, REPLICA SYNC</div>
-                  <div><strong>STATUS:</strong> PLAYABLE EXPERIENCE</div>
+                  <div><strong>Stack:</strong> Luau // Rojo // ProfileService</div>
+                  <div><strong>Systems:</strong> Procedural Rooms, Fast Melee, Replica Sync</div>
+                  <div><strong>Status:</strong> Playable Experience</div>
                 </div>
 
                 <div class="game-actions">
-                  <a href="#" class="retro-btn btn-sm">[ LAUNCH_GAME ]</a>
+                  <a href="#" class="retro-btn btn-sm">[ Launch Game ]</a>
                 </div>
               </div>
             </div>
@@ -357,39 +367,39 @@
             <div class="game-subwindow">
               <div class="subwin-titlebar">
                 <span class="subwin-bullet">■</span>
-                <span class="subwin-name">ECHOES_EDEN.EXE</span>
-                <span class="subwin-tag unity-tag">UNITY</span>
+                <span class="subwin-name">Echoes_Eden.exe</span>
+                <span class="subwin-tag unity-tag">Unity</span>
               </div>
               <div class="subwin-body">
                 <div class="crt-media-frame">
                   <div class="crt-placeholder">
                     <pre>
 ╔═════════════════════════╗
-║     ECHOES OF EDEN      ║
-║  [ TACTICAL SURVIVAL ]  ║
+║     Echoes of Eden      ║
+║  [ Tactical Survival ]  ║
 ╚═════════════════════════╝</pre>
-                    <span class="crt-label">[ GAMEPLAY VIDEO / CLIP ]</span>
+                    <span class="crt-label">[ Gameplay Video / Clip ]</span>
                   </div>
                 </div>
 
                 <div class="game-meta-row">
-                  <span class="meta-role">ROLE: SOLO DEVELOPER</span>
+                  <span class="meta-role">Role: Solo Developer</span>
                   <span class="meta-year">[2024]</span>
                 </div>
 
-                <h3 class="game-title">ECHOES OF EDEN</h3>
+                <h3 class="game-title">Echoes of Eden</h3>
                 <p class="game-desc">
                   Tactical survival adventure built around custom FSM enemy perception, spatial grid building, and dynamic lighting.
                 </p>
 
                 <div class="spec-manifest">
-                  <div><strong>STACK:</strong> C# // UNITY URP // NAVMESH</div>
-                  <div><strong>SYSTEMS:</strong> GRID BUILDING, FSM AI, SERIALIZER</div>
-                  <div><strong>STATUS:</strong> DEMO BUILD</div>
+                  <div><strong>Stack:</strong> C# // Unity URP // NavMesh</div>
+                  <div><strong>Systems:</strong> Grid Building, FSM AI, Serializer</div>
+                  <div><strong>Status:</strong> Demo Build</div>
                 </div>
 
                 <div class="game-actions">
-                  <a href="#" class="retro-btn btn-sm">[ VIEW_REPOSITORY ]</a>
+                  <a href="#" class="retro-btn btn-sm">[ View Repository ]</a>
                 </div>
               </div>
             </div>
@@ -398,39 +408,39 @@
             <div class="game-subwindow">
               <div class="subwin-titlebar">
                 <span class="subwin-bullet">■</span>
-                <span class="subwin-name">VELOCITY_RUSH.EXE</span>
-                <span class="subwin-tag roblox-tag">ROBLOX</span>
+                <span class="subwin-name">Velocity_Rush.exe</span>
+                <span class="subwin-tag roblox-tag">Roblox</span>
               </div>
               <div class="subwin-body">
                 <div class="crt-media-frame">
                   <div class="crt-placeholder">
                     <pre>
 ╔═════════════════════════╗
-║  VELOCITY PARKOUR RUSH  ║
-║  [ TIME-TRIAL RUNNER ]  ║
+║  Velocity Parkour Rush  ║
+║  [ Time-Trial Runner ]  ║
 ╚═════════════════════════╝</pre>
-                    <span class="crt-label">[ GAMEPLAY VIDEO / CLIP ]</span>
+                    <span class="crt-label">[ Gameplay Video / Clip ]</span>
                   </div>
                 </div>
 
                 <div class="game-meta-row">
-                  <span class="meta-role">ROLE: SYSTEMS & GAMEPLAY</span>
+                  <span class="meta-role">Role: Systems & Gameplay</span>
                   <span class="meta-year">[2023]</span>
                 </div>
 
-                <h3 class="game-title">VELOCITY PARKOUR RUSH</h3>
+                <h3 class="game-title">Velocity Parkour Rush</h3>
                 <p class="game-desc">
                   High-speed time-attack platformer with custom raycast momentum character controller and anti-cheat ghost recording.
                 </p>
 
                 <div class="spec-manifest">
-                  <div><strong>STACK:</strong> LUAU // KNIT // RAYCAST_MOVEMENT</div>
-                  <div><strong>SYSTEMS:</strong> GHOST REPLAY, GLOBAL BOARDS, PARKOUR</div>
-                  <div><strong>STATUS:</strong> PLAYABLE EXPERIENCE</div>
+                  <div><strong>Stack:</strong> Luau // Knit // Raycast_Movement</div>
+                  <div><strong>Systems:</strong> Ghost Replay, Global Boards, Parkour</div>
+                  <div><strong>Status:</strong> Playable Experience</div>
                 </div>
 
                 <div class="game-actions">
-                  <a href="#" class="retro-btn btn-sm">[ LAUNCH_GAME ]</a>
+                  <a href="#" class="retro-btn btn-sm">[ Launch Game ]</a>
                 </div>
               </div>
             </div>
@@ -448,16 +458,16 @@
         <div class="win-titlebar">
           <span class="win-bullet">■</span>
           <div class="win-stripes"></div>
-          <span class="win-title">RANDOM.LAB // UI_3D_2D_ASSETS</span>
+          <span class="win-title">Random.lab // UI, 3D & 2D Assets</span>
           <div class="win-stripes"></div>
           <span class="win-btn-static">[ART]</span>
         </div>
 
         <div class="win-content">
           <div class="section-banner">
-            <span class="banner-tag">&gt;&gt; MULTI-DISCIPLINARY WORK</span>
+            <span class="banner-tag">&gt;&gt; Multi-Disciplinary Work</span>
             <p class="banner-desc">
-              GAME USER INTERFACES, 3D LOW-POLY MODELS, SHADERS, AND EXPERIMENTAL 2D MECHANICS BUILT AS SUPPORTING ASSETS.
+              Game user interfaces, 3D low-poly models, shaders, and experimental mechanics built as supporting assets.
             </p>
           </div>
 
@@ -468,7 +478,7 @@
             <div class="random-subwindow">
               <div class="subwin-titlebar">
                 <span class="subwin-bullet">■</span>
-                <span class="subwin-name">UI_HUD.PSD</span>
+                <span class="subwin-name">UI_HUD.psd</span>
                 <span class="subwin-tag">UI/UX</span>
               </div>
               <div class="subwin-body">
@@ -481,7 +491,7 @@
 └───────────────────────┘</pre>
                   </div>
                 </div>
-                <h4>FANTASY RPG HUD & SHOP</h4>
+                <h4>Fantasy RPG HUD & Shop</h4>
                 <p>Authored in Figma, imported into Roblox with responsive constraint containers and tween feedback.</p>
               </div>
             </div>
@@ -490,21 +500,21 @@
             <div class="random-subwindow">
               <div class="subwin-titlebar">
                 <span class="subwin-bullet">■</span>
-                <span class="subwin-name">WEAPONS.OBJ</span>
-                <span class="subwin-tag">3D_MODEL</span>
+                <span class="subwin-name">Weapons.obj</span>
+                <span class="subwin-tag">3D Model</span>
               </div>
               <div class="subwin-body">
                 <div class="crt-media-frame">
                   <div class="crt-placeholder">
                     <pre>
-    ▲     LOW-POLY
-   / \    BLENDER
-  /___\   WEAPON
-   | |    ASSETS
+    ▲     Low-Poly
+   / \    Blender
+  /___\   Weapon
+   | |    Assets
    |_|    </pre>
                   </div>
                 </div>
-                <h4>STYLIZED WEAPONS PACK</h4>
+                <h4>Stylized Weapons Pack</h4>
                 <p>Modeled and UV-mapped in Blender. Strict poly budgets tuned for mobile and high-CCU Roblox servers.</p>
               </div>
             </div>
@@ -513,7 +523,7 @@
             <div class="random-subwindow">
               <div class="subwin-titlebar">
                 <span class="subwin-bullet">■</span>
-                <span class="subwin-name">SHADERS.HLSL</span>
+                <span class="subwin-name">Shaders.hlsl</span>
                 <span class="subwin-tag">VFX</span>
               </div>
               <div class="subwin-body">
@@ -521,12 +531,12 @@
                   <div class="crt-placeholder">
                     <pre>
  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-  PROCEDURAL WATER
+  Procedural Water
  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-  DISSOLVE IMPACTS</pre>
+  Dissolve Impacts</pre>
                   </div>
                 </div>
-                <h4>CUSTOM SHADERS & VFX</h4>
+                <h4>Custom Shaders & VFX</h4>
                 <p>Shader Graph procedural caustic reflections and Roblox beam particle networks for combat impacts.</p>
               </div>
             </div>
@@ -535,8 +545,8 @@
             <div class="random-subwindow">
               <div class="subwin-titlebar">
                 <span class="subwin-bullet">■</span>
-                <span class="subwin-name">RADIAL_MENU.LUA</span>
-                <span class="subwin-tag">INTERACTIVE</span>
+                <span class="subwin-name">Radial_Menu.lua</span>
+                <span class="subwin-tag">Interactive</span>
               </div>
               <div class="subwin-body">
                 <div class="crt-media-frame">
@@ -545,10 +555,10 @@
       [▲ N]
   [◄ W] ┼ [E ►]
       [▼ S]
-  RADIAL SELECT</pre>
+  Radial Select</pre>
                   </div>
                 </div>
-                <h4>RADIAL EQUIPMENT WHEEL</h4>
+                <h4>Radial Equipment Wheel</h4>
                 <p>Trigonometric gamepad & mouse cursor directional selection menu with animated spring scaling.</p>
               </div>
             </div>
@@ -558,72 +568,61 @@
     </section>
 
     <!-- ===================================================================
-         SECTION 5: CONTACT (BLACK RETRO ERROR/WARNING THEME DIALOG)
+         SECTION 5: CONTACT (DISCORD PRIMARY + ROBLOX PROFILE ONLY)
          =================================================================== -->
     <section class="page-section" id="contact">
-      <div class="retro-window black-theme contact-window">
-        <div class="win-titlebar black-bar">
+      <div class="retro-window contact-window">
+        <div class="win-titlebar">
           <span class="win-bullet">■</span>
-          <div class="win-stripes inverted"></div>
-          <span class="win-title">CONTACT.BAT // INITIALIZE_COMMISSION</span>
-          <div class="win-stripes inverted"></div>
+          <div class="win-stripes"></div>
+          <span class="win-title">Contact.bat // Commissions</span>
+          <div class="win-stripes"></div>
           <span class="win-btn-static">[!]</span>
         </div>
 
         <div class="win-content">
-          <!-- Retro Alert Banner -->
-          <div class="alert-box">
-            <div class="alert-symbol">[!]</div>
-            <div class="alert-text">
-              <strong>NOTICE: ACCEPTING ROBLOX & UNITY CONTRACTS</strong><br />
-              CURRENTLY OPEN FOR GAMEPLAY SCRIPTING COMMISSIONS AND FULL ARCHITECTURE BUILDS.
-            </div>
+          <!-- Direct Commission Callout -->
+          <div class="contact-header-card">
+            <h2 class="contact-title">Ready to build your game mechanics?</h2>
+            <p class="contact-desc">
+              Currently accepting Roblox Luau scripting commissions, server-authoritative combat architectures, and gameplay engineering. Reach out directly on <strong>Discord</strong> for the fastest response.
+            </p>
           </div>
 
-          <!-- Channel List -->
-          <div class="quick-channels">
-            <div class="channel-row">
-              <span class="channel-lbl">&gt; DISCORD:</span>
-              <span class="channel-val">@toccata_dev</span>
+          <div class="ruler-line"></div>
+
+          <!-- Quick Connect Link Cards (Discord & Roblox Profile) -->
+          <div class="contact-links-grid two-cards">
+
+            <!-- Discord Card -->
+            <div class="contact-channel-card featured-channel">
+              <div class="channel-top">
+                <span class="channel-tag">Primary Contact</span>
+                <span class="channel-icon">💬</span>
+              </div>
+              <h3 class="channel-name">Discord</h3>
+              <p class="channel-desc">Fastest response for commission inquiries, mechanic quotes, and team discussions.</p>
+              <div class="channel-handle-box">
+                <span class="handle-text" id="discordHandle">@toccata_dev</span>
+                <button class="retro-btn btn-sm copy-btn" id="copyDiscordBtn">[ Copy Handle ]</button>
+              </div>
             </div>
-            <div class="channel-row">
-              <span class="channel-lbl">&gt; DEVFORUM:</span>
-              <span class="channel-val">@Toccata</span>
-            </div>
-            <div class="channel-row">
-              <span class="channel-lbl">&gt; EMAIL:</span>
-              <span class="channel-val">toccata.gamedev@example.com</span>
-            </div>
-            <div class="channel-row">
-              <span class="channel-lbl">&gt; GITHUB:</span>
-              <span class="channel-val">github.com/toccata</span>
-            </div>
+
+            <!-- Roblox Profile Card -->
+            <a href="https://www.roblox.com" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+              <div class="channel-top">
+                <span class="channel-tag">Roblox Platform</span>
+                <span class="channel-icon">🎮</span>
+              </div>
+              <h3 class="channel-name">Roblox Profile</h3>
+              <p class="channel-desc">Check out playable experiences, published places, creations, and inventory.</p>
+              <div class="channel-action">
+                <span class="retro-btn btn-sm">[ Open Profile ↗ ]</span>
+              </div>
+            </a>
+
           </div>
 
-          <div class="ruler-line" style="background: repeating-linear-gradient(to right, #FFFFFF, #FFFFFF 1px, transparent 1px, transparent 8px);"></div>
-
-          <!-- Commission Form -->
-          <form class="retro-form" id="contactForm" onsubmit="event.preventDefault(); alert('TRANSMISSION SENT! THANK YOU.');">
-            <div class="form-group">
-              <label for="clientName">&gt; CLIENT_NAME / STUDIO:</label>
-              <input type="text" id="clientName" class="retro-input" placeholder="E.G. PIXEL_GAMES_INC" required />
-            </div>
-
-            <div class="form-group">
-              <label for="clientContact">&gt; YOUR_DISCORD_OR_EMAIL:</label>
-              <input type="text" id="clientContact" class="retro-input" placeholder="@USER#0000 OR CONTACT@STUDIO.COM" required />
-            </div>
-
-            <div class="form-group">
-              <label for="projectScope">&gt; PROJECT_DETAILS & TIMELINE:</label>
-              <textarea id="projectScope" class="retro-input" rows="3" placeholder="DESCRIBE REQUIRED SYSTEMS, TIMELINE, AND ESTIMATED BUDGET..." required></textarea>
-            </div>
-
-            <div class="dialog-actions">
-              <button type="submit" class="retro-btn invert">[ TRANSMIT_REQUEST ]</button>
-              <a href="mailto:toccata.gamedev@example.com" class="retro-btn">[ DIRECT_EMAIL ]</a>
-            </div>
-          </form>
         </div>
       </div>
     </section>
@@ -638,35 +637,35 @@
       <div class="win-titlebar">
         <span class="win-bullet">■</span>
         <div class="win-stripes"></div>
-        <span class="win-title" id="specModalTitle">SPEC_INSPECTOR.SYS</span>
+        <span class="win-title" id="specModalTitle">Spec_Inspector.sys</span>
         <div class="win-stripes"></div>
         <button class="win-btn-close" id="specModalClose" aria-label="Close">[X]</button>
       </div>
 
       <div class="win-content">
-        <div class="widget-meta-bar" id="specModalPlatform">PLATFORM: ROBLOX LUAU</div>
+        <div class="widget-meta-bar" id="specModalPlatform">Platform: Roblox Luau</div>
         
         <div class="ruler-line"></div>
         
-        <h3 class="widget-sys-heading" id="specModalHeading">SYSTEM_NAME</h3>
+        <h3 class="widget-sys-heading" id="specModalHeading">System Name</h3>
         <p class="widget-sys-desc" id="specModalOverview"></p>
 
         <div class="crosshatch-divider"></div>
 
         <div class="widget-block">
-          <span class="widget-block-title">&gt;&gt; ARCHITECTURAL BREAKDOWN:</span>
+          <span class="widget-block-title">&gt;&gt; Architectural Breakdown:</span>
           <ul class="widget-bullet-list" id="specModalList"></ul>
         </div>
 
         <div class="crosshatch-divider"></div>
 
         <div class="widget-block">
-          <span class="widget-block-title">&gt;&gt; STACK MANIFEST:</span>
+          <span class="widget-block-title">&gt;&gt; Stack Manifest:</span>
           <div class="widget-tags-row" id="specModalTags"></div>
         </div>
 
         <div class="window-btn-bar" style="margin-top: 1.5rem;">
-          <button class="retro-btn" id="specModalDoneBtn">[ CLOSE_INSPECTOR ]</button>
+          <button class="retro-btn" id="specModalDoneBtn">[ Close Inspector ]</button>
         </div>
       </div>
     </div>
@@ -676,13 +675,13 @@
   <footer class="mac-statusbar">
     <div class="status-left">
       <span class="led-light"></span>
-      <span class="status-text">TOCCATA_OS READY // PURE HTML + CSS + JS // ZERO DRAGGING DEPENDENCIES</span>
+      <span class="status-text">Toccata // Gameplay & Systems Portfolio</span>
     </div>
     <div class="status-right">
-      <a href="#hero" class="task-pill">[ TOP ]</a>
-      <a href="#systems" class="task-pill">[ SYSTEMS ]</a>
-      <a href="#featured" class="task-pill">[ GAMES ]</a>
-      <a href="#contact" class="task-pill">[ CONTACT ]</a>
+      <a href="#hero" class="task-pill">[ Top ]</a>
+      <a href="#systems" class="task-pill">[ Systems ]</a>
+      <a href="#featured" class="task-pill">[ Games ]</a>
+      <a href="#contact" class="task-pill">[ Contact ]</a>
     </div>
   </footer>
 
