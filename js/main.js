@@ -161,6 +161,102 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. TECHNICAL SPECIFICATIONS DATABASE (SYSTEM INSPECTOR WIDGET)
   const systemDatabase = {
+    'sys-vehicle': {
+      title: 'Modular Vehicle Building & Assembly System',
+      platform: 'Platform: Roblox Luau // Physics & Construction Architecture',
+      overview: 'An interactive sandbox vehicle construction framework featuring real-time grid snapping, directional part rotation, attachment point constraint generation, and seat/motor controller binding.',
+      breakdown: [
+        'Grid & Attachment Snapping: Custom raycast placement system with local-space bounding calculations, face snapping, and anti-overlap collision guards.',
+        'Dynamic Constraint Assembly: Automatically constructs Welds, CylindricalConstraints, and SpringConstraints when linking wheels, motors, and chassis parts upon vehicle spawn.',
+        'Client-Server Architecture: Client previews holographic placement locally; server validates piece inventory, positions, and instantiates the physics-active assembly.',
+        'Seat Control & Throttle Integration: Custom vehicle seat driver mapping player WASD input directly into motor torque, steering servos, and suspension dampening.'
+      ],
+      tags: ['Luau', 'Physics Constraints', 'Grid Placement', 'Client Prediction', 'Vehicle Physics']
+    },
+    'sys-vehicle-save': {
+      title: 'Vehicle Save & Load Serialization Pipeline',
+      platform: 'Platform: Roblox Luau // DataStores & Profile Architecture',
+      overview: 'A robust serialization and deserialization backend that encodes custom player-built vehicles, assemblies, and part graphs into lightweight compressed formats suitable for DataStore saving.',
+      breakdown: [
+        'Hierarchical Part Serialization: Traverses the entire vehicle Model tree, encoding relative CFrame offsets, part IDs, custom colors, and material attributes into a compressed array.',
+        'Slot-Based Save Management: Supports multiple named vehicle save slots with thumbnail generation data, part count quotas, and cost validation.',
+        'Atomic DataStore Transactions: Wraps save operations with session checks and retry mechanisms (UpdateAsync) to protect against data loss during server shutdowns.',
+        'Reconstruction & Constraint Rebuilding: On load, rebuilds the physical model at the builder spawn pad, instantiates physics constraints, and connects drive logic seamlessly.'
+      ],
+      tags: ['Luau', 'DataStores', 'Serialization', 'CFrame Math', 'Save/Load Pipeline']
+    },
+    'sys-painting': {
+      title: 'Part Painting & Surface Material System',
+      platform: 'Platform: Roblox Luau // Tooling & Interactive Systems',
+      overview: 'An interactive cosmetic customizer allowing players to dynamically paint vehicle and structure components with custom color palettes, hex inputs, and surface material properties.',
+      breakdown: [
+        'Targeted Raycast Highlighting: Highlights the targeted vehicle part on hover with an active outline/selection box, determining part ownership and validity.',
+        'Dynamic Palette & Swatch Binding: Custom UI offering pre-selected color swatches, RGB spectrum sliders, and Roblox Enum.Material selections.',
+        'Server-Authoritative Application: Client dispatches color/material payloads; server validates builder permissions and range before mutating part attributes.',
+        'State Persistence Link: Mutated color and material properties update the vehicle assembly schema in real-time so changes persist across save and load sessions.'
+      ],
+      tags: ['Luau', 'Raycasting', 'Materials & Shaders', 'Networking', 'Customizer UI']
+    },
+    'sys-zombie-defence': {
+      title: 'Zombie Defence Engine: Gunplay, Barricades & Custom AI',
+      platform: 'Platform: Roblox Luau // Combat, Construction & AI Architecture',
+      overview: 'A complete round-based survival defense system combining client-predicted gun mechanics, dynamic barricade/turret building, and custom zombie pathfinding that adapts to real-time player structures.',
+      breakdown: [
+        'Fast-Paced Gunplay: Raycast weapon controller featuring client prediction, recoil spring-math, ammo/reload state machines, and server damage verification with headshot multipliers.',
+        'Real-Time Defensive Building: Snap-to-grid barricade and trap placement with structural integrity health pools, destruction physics, and repair interactions.',
+        'Custom Zombie Pathfinding & Obstacle Flow: Custom pathfinding algorithm that navigates towards players while dynamically recalculating around or choosing to bash through newly placed barricades.',
+        'Performance Horde Management: Throttles AI sensor ticks on distant zombies and utilizes bulk raycast pooling to ensure 60 FPS performance even during massive horde waves.'
+      ],
+      tags: ['Luau', 'Raycast Weapons', 'Custom Pathfinding', 'Horde AI', 'Building Mechanics']
+    },
+    'sys-lego-building': {
+      title: 'Modular Stud Building & Physics Destruction System',
+      platform: 'Platform: Roblox Luau // Voxel/Stud Physics & Structural Graphing',
+      overview: 'A Lego-inspired modular building and dynamic structural destruction system featuring real-time stud grid alignment, multi-part connectivity graphing, and physics-driven explosive fracturing.',
+      breakdown: [
+        'Stud Grid Alignment & Attachment: Strict modular stud-and-tube snapping with rotational orientation checks, allowing brick placement in all 6 standard axes.',
+        'Structural Graph & Island Detection: Maintains an adjacency graph of connected bricks; when critical support bricks are destroyed, severed sections dynamically un-weld and become physical unanchored debris.',
+        'Explosive Impulse & Debris Physics: Projectile impact shockwaves calculate directional force vectors, detaching bricks within the blast radius and simulating dynamic tumble physics.',
+        'Performance Memory Pooling: Reusable brick instances and automated debris lifetime culling prevent physics engine stall even with hundreds of fractured bricks.'
+      ],
+      tags: ['Luau', 'Modular Building', 'Destruction Physics', 'Adjacency Graph', 'Debris Simulation']
+    },
+    'sys-sidescroll-car': {
+      title: '2.5D Side-Scrolling Vehicle Physics Engine',
+      platform: 'Platform: Roblox Luau // 2D Constraint Physics & Camera Mathematics',
+      overview: 'A physics-driven 2.5D side-scrolling driving system restricting vehicle degrees of freedom to a single 2D plane while maintaining realistic suspension damping, center-of-gravity pitch controls, and dynamic camera framing.',
+      breakdown: [
+        'Planar Motion Locking: Utilizes PlaneConstraints and custom orientation dampers to lock the vehicle to a strict 2D coordinate track without tipping sideways off the map.',
+        'Simulated Wheel & Spring Suspension: CylindricalConstraints and SpringConstraints tuned to deliver realistic compression, rebound damping, and hill climbing traction.',
+        'Airborne Pitch & Balance Control: Player directional inputs apply angular impulses while airborne, enabling flips, wheelie balancing, and smooth hill landing alignment.',
+        'Smooth Tracking 2.5D Camera: Dynamic lerp camera with speed-based lookahead offset, zoom out on high velocities, and vertical bounding dampening.'
+      ],
+      tags: ['Luau', '2.5D Physics', 'Vehicle Constraints', 'Spring Dynamics', 'Camera Tracking']
+    },
+    'sys-traffic': {
+      title: 'Autonomous Traffic AI & Road Node Network',
+      platform: 'Platform: Roblox Luau // AI Waypoints & Graph Navigation',
+      overview: 'An intelligent autonomous urban traffic simulation where NPC vehicles navigate connected road networks, follow traffic regulations, detect collisions, and yield at intersections.',
+      breakdown: [
+        'Node-Based Road Graph: Directional graph representation of roads, turns, and multiple lanes, allowing cars to choose dynamic random routes or targeted destinations.',
+        'Forward Raycast Proximity Sensor: Multi-tier raycasts detect forward obstacles, braking when approaching slower traffic and coming to a smooth stop at red lights or blockages.',
+        'Intersection Priority & Yield Protocol: Intersections manage reservation tokens preventing gridlock; cars detect incoming cross-traffic and yield until clear.',
+        'Adaptive Speed & Lane Changes: Autonomous cars accelerate to the local road speed limit and query adjacent lanes for passing opportunities when blocked.'
+      ],
+      tags: ['Luau', 'AI Navigation', 'Graph Networks', 'Traffic Simulation', 'Raycast Proximity']
+    },
+    'sys-acrobatic-car': {
+      title: 'Acrobatic Aerial Car & Stunt Physics Framework',
+      platform: 'Platform: Roblox Luau // Aerobatics, Torque & Vehicle Dynamics',
+      overview: 'An arcade-style high-agility vehicle controller inspired by Rocket League, empowering vehicles with mid-air pitch, roll, and yaw torque, double jumps, boost acceleration, and auto-righting ground recovery.',
+      breakdown: [
+        'Mid-Air Orientation Thrusters: Applies AngularVelocity and VectorForce impulses when wheels lose ground contact, giving the player responsive airborne acrobatics.',
+        'Multi-Jump & Impulse Dodges: State machine tracking ground contact allowing timed double jumps and directional dodge flips with physics impulse bursts.',
+        'Rocket Boost & Particle Dynamics: High-velocity LinearVelocity thruster system with trail emitters, velocity clamping, and fuel depletion/recharge logic.',
+        'Ground Snap & Landing Assists: Proximity raycasts detect landing angles, optionally applying torque correction to land wheels-down seamlessly without rollover spinouts.'
+      ],
+      tags: ['Luau', 'Arcade Vehicle Physics', 'Airborne Torque', 'Impulse Mechanics', 'Stunt Engine']
+    },
     'sys-combat': {
       title: 'Server-Authoritative Melee & Hitbox Pipeline',
       platform: 'Platform: Roblox Luau // Strict Netcode',
