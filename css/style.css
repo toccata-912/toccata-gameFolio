@@ -855,6 +855,12 @@ button {
   flex-wrap: wrap;
 }
 
+.channel-btn-group {
+  display: inline-flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
 .handle-text {
   font-family: var(--font-code);
   font-size: 12px;
