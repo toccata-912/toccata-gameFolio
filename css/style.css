@@ -657,7 +657,8 @@ button {
 }
 
 .system-subwindow {
-  cursor: pointer;
+  /* cursor: pointer; (Temporarily disabled while inspect is hidden) */
+  cursor: default;
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
@@ -667,7 +668,9 @@ button {
   background-color: #FFFDF8;
 }
 
+/* Temporarily hidden: Inspect System button */
 .system-subwindow .retro-btn {
+  display: none !important;
   margin-top: auto;
 }
 

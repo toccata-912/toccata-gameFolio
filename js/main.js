@@ -186,16 +186,16 @@ document.addEventListener('DOMContentLoaded', () => {
       tags: ['Luau', 'DataStores', 'Serialization', 'CFrame Math', 'Save/Load Pipeline']
     },
     'sys-painting': {
-      title: 'Part Painting & Surface Material System',
+      title: 'Part Painting System',
       platform: 'Platform: Roblox Luau // Tooling & Interactive Systems',
-      overview: 'An interactive cosmetic customizer allowing players to dynamically paint vehicle and structure components with custom color palettes, hex inputs, and surface material properties.',
+      overview: 'An interactive cosmetic customizer allowing players to dynamically paint vehicle and structure components with custom color palettes and hex inputs.',
       breakdown: [
         'Targeted Raycast Highlighting: Highlights the targeted vehicle part on hover with an active outline/selection box, determining part ownership and validity.',
-        'Dynamic Palette & Swatch Binding: Custom UI offering pre-selected color swatches, RGB spectrum sliders, and Roblox Enum.Material selections.',
-        'Server-Authoritative Application: Client dispatches color/material payloads; server validates builder permissions and range before mutating part attributes.',
-        'State Persistence Link: Mutated color and material properties update the vehicle assembly schema in real-time so changes persist across save and load sessions.'
+        'Dynamic Palette & Swatch Binding: Custom UI offering pre-selected color swatches and RGB spectrum sliders.',
+        'Server-Authoritative Application: Client dispatches color payloads; server validates builder permissions and range before mutating part attributes.',
+        'State Persistence Link: Mutated color properties update the vehicle assembly schema in real-time so changes persist across save and load sessions.'
       ],
-      tags: ['Luau', 'Raycasting', 'Materials & Shaders', 'Networking', 'Customizer UI']
+      tags: ['Luau', 'Raycasting', 'Color Palette', 'Networking', 'Customizer UI']
     },
     'sys-zombie-defence': {
       title: 'Zombie Defence Engine: Gunplay, Barricades & Custom AI',
@@ -363,12 +363,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  document.querySelectorAll('.system-subwindow').forEach(card => {
-    card.addEventListener('click', () => {
-      const sysId = card.getAttribute('data-system-id');
-      openSpecModal(sysId);
-    });
-  });
+  // Spec inspector modal trigger (temporarily disabled while inspect is hidden)
+  // document.querySelectorAll('.system-subwindow').forEach(card => {
+  //   card.addEventListener('click', () => {
+  //     const sysId = card.getAttribute('data-system-id');
+  //     openSpecModal(sysId);
+  //   });
+  // });
 
   if (modalClose) modalClose.addEventListener('click', closeSpecModal);
   if (modalDoneBtn) modalDoneBtn.addEventListener('click', closeSpecModal);
