@@ -4,24 +4,36 @@
    Typography: JetBrains Mono + Plus Jakarta Sans
    ========================================================================== */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border-radius: 0 !important; /* Strict hard 90-degree rectangular edges */
+  border-radius: 0 !important;
+  /* Strict hard 90-degree rectangular edges */
 }
 
 :root {
   /* Vintage Eye-Friendly Palette */
-  --bg-desktop: #2B6B8A;       /* Muted slate-cerulean */
-  --card-cream: #FAF8F2;       /* Warm gentle parchment */
-  --card-gray: #ECE9DF;        /* Soft Win 3.1 light gray */
-  --border-solid: #1E232A;     /* Deep charcoal outline */
-  --accent-gold: #E2B024;      /* Vintage amber/gold hover */
-  --system-gray: #D1CFC7;      /* Classic silver/cream taskbar */
-  --text-dark: #1E232A;        /* High-contrast readable charcoal */
-  --text-muted: #4B5563;       /* Clear secondary description text */
-  --text-dim: #6B7280;         /* Metadata */
+  --bg-desktop: #2B6B8A;
+  /* Muted slate-cerulean */
+  --card-cream: #FAF8F2;
+  /* Warm gentle parchment */
+  --card-gray: #ECE9DF;
+  /* Soft Win 3.1 light gray */
+  --border-solid: #1E232A;
+  /* Deep charcoal outline */
+  --accent-gold: #E2B024;
+  /* Vintage amber/gold hover */
+  --system-gray: #D1CFC7;
+  /* Classic silver/cream taskbar */
+  --text-dark: #1E232A;
+  /* High-contrast readable charcoal */
+  --text-muted: #4B5563;
+  /* Clear secondary description text */
+  --text-dim: #6B7280;
+  /* Metadata */
 
   /* Clean, Aesthetic, Highly Legible Typography */
   --font-code: 'JetBrains Mono', monospace;
@@ -215,13 +227,11 @@ button {
 .win-stripes {
   flex-grow: 1;
   height: 12px;
-  background: repeating-linear-gradient(
-    to bottom,
-    var(--border-solid),
-    var(--border-solid) 1px,
-    transparent 1px,
-    transparent 3px
-  );
+  background: repeating-linear-gradient(to bottom,
+      var(--border-solid),
+      var(--border-solid) 1px,
+      transparent 1px,
+      transparent 3px);
   margin: 0 4px;
   opacity: 0.8;
   min-width: 12px;
@@ -326,7 +336,7 @@ button {
   background: var(--border-solid);
   color: #FFFFFF;
   border-color: var(--border-solid);
-  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.5);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .seg-icon {
@@ -458,13 +468,11 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.08),
-    rgba(0,0,0,0.08) 1px,
-    transparent 1px,
-    transparent 2px
-  );
+  background: repeating-linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.08) 1px,
+      transparent 1px,
+      transparent 2px);
   pointer-events: none;
 }
 
@@ -642,14 +650,16 @@ button {
   text-align: center;
 }
 
-.system-title, .game-title {
+.system-title,
+.game-title {
   font-size: clamp(13px, 3.2vw, 14px);
   font-weight: 700;
   margin-bottom: 6px;
   line-height: 1.35;
 }
 
-.system-desc, .game-desc {
+.system-desc,
+.game-desc {
   font-size: clamp(12px, 3vw, 13px);
   color: var(--text-muted);
   line-height: 1.5;
@@ -974,26 +984,22 @@ button {
    ========================================================================== */
 .ruler-line {
   height: 6px;
-  background: repeating-linear-gradient(
-    to right,
-    var(--border-solid),
-    var(--border-solid) 1px,
-    transparent 1px,
-    transparent 8px
-  );
+  background: repeating-linear-gradient(to right,
+      var(--border-solid),
+      var(--border-solid) 1px,
+      transparent 1px,
+      transparent 8px);
   margin: 14px 0 18px;
   opacity: 0.6;
 }
 
 .crosshatch-divider {
   height: 5px;
-  background: repeating-linear-gradient(
-    45deg,
-    var(--border-solid),
-    var(--border-solid) 1px,
-    transparent 1px,
-    transparent 4px
-  );
+  background: repeating-linear-gradient(45deg,
+      var(--border-solid),
+      var(--border-solid) 1px,
+      transparent 1px,
+      transparent 4px);
   margin: 14px 0;
   opacity: 0.5;
 }
@@ -1193,12 +1199,12 @@ button {
   }
 
   .win-stripes {
-    display: none; /* Give max room to title on very tiny screens */
+    display: none;
+    /* Give max room to title on very tiny screens */
   }
 
   .retro-btn {
     font-size: 11px;
     padding: 6px 10px;
   }
-}
 }
