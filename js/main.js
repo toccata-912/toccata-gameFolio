@@ -257,6 +257,29 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       tags: ['Luau', 'Arcade Vehicle Physics', 'Airborne Torque', 'Impulse Mechanics', 'Stunt Engine']
     },
+    'sys-dont-implode': {
+      title: 'Don\'t Implode — Submarine Defects & Sonar System',
+      platform: 'Platform: Unity C# // Team Game Project',
+      overview: 'Engineered the core Defects damage/repair loop and acoustic Sonar ping navigation system for the team-developed submarine survival game Don\'t Implode.',
+      breakdown: [
+        'Defect & Hull Breach Simulation: Procedural damage event system triggering localized water leaks, electrical faults, and hull pressure warnings.',
+        'Interactive Repair Mechanics: Multi-stage tool interactions allowing players to weld breaches, replace fuses, and pump water to maintain submarine buoyancy.',
+        'Acoustic Sonar Ping System: Custom audio-visual radar sweep projecting sonar echoes off seabed terrain and ocean obstacles.',
+        'State Management & Team Coordination: Decoupled C# event-driven architecture synchronizing system alerts with submarine cockpit gauges.'
+      ],
+      tags: ['Unity C#', 'Defects System', 'Sonar Radar', 'Game Jam / Team', 'Submarine Sim']
+    },
+    'sys-trust-no-racer': {
+      title: 'Trust No Racer — Character Generation & Data Layer',
+      platform: 'Platform: Unity C# // Team Game Jam',
+      overview: 'Built with a team for a game jam, responsible for the character generation system and persistent data layer.',
+      breakdown: [
+        'Procedural Character Generation: Modular assembly combining body meshes, customizable vehicle parts, and racer statistics.',
+        'Architecture & Data Layer: Structured runtime state and save pipeline synchronizing racer loadouts and race progression.',
+        'Event-Driven Integration: C# event architecture coupling gameplay events cleanly with HUD visual updates.'
+      ],
+      tags: ['Unity C#', 'Character Generation', 'Data Layer', 'Game Jam / Team', 'Racing']
+    },
     'sys-combat': {
       title: 'Server-Authoritative Melee & Hitbox Pipeline',
       platform: 'Platform: Roblox Luau // Strict Netcode',

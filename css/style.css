@@ -668,10 +668,24 @@ button {
   background-color: #FFFDF8;
 }
 
-/* Temporarily hidden: Inspect System button */
-.system-subwindow .retro-btn {
+/* Temporarily hidden: Inspect System button (only hides the inspect button, preserves external action links) */
+.system-subwindow button.retro-btn {
   display: none !important;
   margin-top: auto;
+}
+
+.system-subwindow a.retro-btn {
+  display: inline-flex !important;
+}
+
+/* Image containment modifiers */
+.crt-media-frame.contain-fit {
+  background: #0E1318;
+}
+
+.crt-media-frame.contain-fit .media-img {
+  object-fit: contain;
+  background: #0E1318;
 }
 
 /* ==========================================================================
@@ -1186,4 +1200,5 @@ button {
     font-size: 11px;
     padding: 6px 10px;
   }
+}
 }
