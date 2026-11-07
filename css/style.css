@@ -439,25 +439,25 @@ button {
    ========================================================================== */
 .avatar-bio-grid {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 22px;
-  align-items: start;
+  grid-template-columns: 200px 1fr;
+  gap: 28px;
+  align-items: center;
 }
 
 .avatar-frame-box {
-  width: 136px;
+  width: 196px;
   border: 2px solid var(--border-solid);
   background: #111111;
-  padding: 3px;
+  padding: 4px;
   position: relative;
   text-align: center;
-  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 .profile-avatar-img {
   display: block;
-  width: 126px;
-  height: 126px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   background: #FFFFFF;
 }
